@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homework 5</title>
+</head>
+<body>
+<p class="super_element">Привет</p>
+<!-- <img src="https://placeimg.com/50/50/animals" alt=""> -->
+<!-- <img src="https://placeimg.com/50/50/arch" alt=""> -->
+<!-- <img src="https://placeimg.com/50/50/nature" alt=""> -->
+<!-- <img src="https://placeimg.com/50/50/people" alt=""> -->
+<!-- <img src="https://placeimg.com/50/50/tech" alt=""> -->
+<!-- <img src="https://placeimg.com/50/50/tech/grayscale" alt=""> -->
+<!-- <img src="https://placeimg.com/50/50/tech/sepia" alt=""> -->
+<img src="https://dummyimage.com/50x50/000/fff.png&text=animals" alt="">
+<img src="https://dummyimage.com/50x50/000/fff.png&text=arch" alt="">
+<img src="https://dummyimage.com/50x50/000/fff.png&text=nature" alt="">
+<img src="https://dummyimage.com/50x50/000/fff.png&text=people" alt="">
+<img src="https://dummyimage.com/50x50/000/fff.png&text=tech" alt="">
+<img src="https://dummyimage.com/50x50/000/fff.png&text=grayscale" alt="">
+<img src="https://dummyimage.com/50x50/000/fff.png&text=sepia" alt="">
+<br>
+<button>Кнопка</button>
+<button class="super_element">Кнопка с классом btn</button>
+<button>Кнопка</button>
+<br>
+<textarea></textarea>
+<br>
+<ul>
+    <li>
+    <button>Кнопка 1</button>
+    </li>
+    <li>
+    <button>Кнопка 2</button>
+    </li>
+    <li>
+    <button>Кнопка 3</button>
+    </li>
+    <li>
+    <button>Кнопка 4</button>
+    </li>
+</ul>
+<script>
+    // Необходимо вывести сообщение в консоль "все теги прогрузились", когда все теги будут созданы браузером.
+    // Решение через DOMContentLoaded
+    document.addEventListener('DOMContentLoaded', function (e) {
+        console.log("все теги прогрузились");
+    })
+    // Необходимо вывести сообщение в консоль "страница загрузилась", когда все ресурсы страницы будут загружены
+    // Решение через window
+    window.addEventListener('load', function (e) {
+        console.log("страница загрузилась");
+    });
+    // При клике на какой-либо тег на странице в консоль должно выводиться сообщение следующего вида:
+    // ○ Класс "super_element" присутствует в элементе "div".
+    // ○ Сообщение должно определять присутствует ли класс "super_element" у элемента и выводить в нижнем регистре верный тег в данной строке, по которому был совершен клик.
+    // ○ Необходимо использовать делегирование.
+    document.addEventListener('click', function (e) {
+        const nameTag = e.target.tagName.toLowerCase();
+        (e.target.classList.contains('super_element')) ? console.log(`Класс super_element присутствует в элементе ${nameTag}`) : console.log(`Класс super_element отсутствует в элементе ${nameTag}`)
+    });
+    // Сделайте так, чтобы при наведении на <textarea> в консоли появлялось сообщение: "Вы навели на textarea."
+    const textareaElement = document.querySelector('textarea');
+    textareaElement.addEventListener('mouseover', function (e) {
+        console.log("Вы навели на textarea.");
+    });
+    // Необходимо повесить событие клика на тег <ul>. В обработчике события в консоль выводите текст, который записан внутри элемента кнопки, по которой был произведен клик. Если клик был не по кнопке, то ничего выводить не нужно. Необходимо использовать делегирование.
+    const ulElement = document.querySelector('ul');
+    ulElement.addEventListener('click', function (e) {
+        if(e.target.tagName === 'BUTTON') {
+            console.log(e.target.textContent);
+        }
+    });
+    // Вопрос: Почему в console.log сначала пишется текст из 5 задания и только потом текст из 3 задания, если мы кликаем по кнопкам в <ul>? Ответ необходимо написать здесь же, под этим комментарием, своими словами
+        // Потому что завершение события клика на <ul> происходит быстрее, чем завершение события клика по поиску "super_element"
+
+    // С помощью JS необходимо изменить цвет заднего фона каждого второго тега <li>.
+    const liElement = document.querySelectorAll('li');
+    liElement.forEach((element, i) => {
+        if (i % 2 !== 0) {
+            const buttonElement = element.querySelector('button');
+            buttonElement.style.backgroundColor = 'red';
+        }
+    });
+
+</script>
+</body>
+</html>
