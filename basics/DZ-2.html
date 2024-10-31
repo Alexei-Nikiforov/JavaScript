@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Task-1
+        let num1 = Number(prompt('Введите 1 число'));
+        let num2 = Number(prompt('Введите 2 число'));
+        console.log((num1 <= 1 && num2 >=3) ? 'ok' : 'no');
+
+        // Task-2
+        let test = true;
+        //console.log((test === true) ? '+++' : '---');
+        console.log(test ? '+++' : '---');
+
+        //Task-3
+        let days = Number(prompt('Введите день'));
+
+        // if (days > 0 && days <= 10) {
+        //     console.log('1 декада');
+        // } else if (days > 10 && days <= 20) {
+        //     console.log('2 декада');
+        // } else {
+        //     console.log('3 декада');
+        // }
+
+        let decade;
+        if (days >= 1 && days <= 10) {
+            decade = 'первая';
+        } else if (days > 10 && days <= 20) {
+            decade = 'вторая';
+        } else if (days > 20 && days <= 31) {
+            decade = 'третья';
+        } else {
+            decade = 'некорректное число';
+        }
+        console.log(`Число ${days} попадает в ${decade} декаду месяца.`)
+
+        //Task-4
+        let razryad = Number(prompt('Введите число'));
+
+        // console.log(`Ваше число ${razryad} имеет ${Math.floor(razryad / 100 )} сотен, ${Math.floor(razryad / 10 % 10)} десятков, ${razryad % 10} единиц`);
+
+        let units = razryad % 10;
+        let tens = Math.floor((razryad % 100) / 10);
+        let hundreds = Math.floor(razryad / 100);
+
+        console.log(`В числе ${razryad} количество сотен: ${hundreds}, десятков: ${tens}, единиц: ${units}`);
+
+    </script>
+</body>
+</html>
