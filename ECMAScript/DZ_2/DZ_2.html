@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DZ-2</title>
+</head>
+<body>
+    <script>
+        // Задание 1. "Управление библиотекой книг"
+        // Реализуйте класс Book, представляющий книгу, со следующими свойствами и методами: 
+        // ● Свойство title(название)-строка, название книги. 
+        // ● Свойство author(автор)-строка, имя автора книги. 
+        // ● Свойство pages(количество страниц)-число, количество страниц в книге.
+        // ● Метод displayInfo() - выводит информацию о книге (название, автор и количество страниц).
+        // Пример использования класса
+        // const book1 = new Book("1984", "Джордж Оруэлл", 328);
+        // book1.displayInfo();
+        // Вывод: Название: 1984, Автор: Джордж Оруэлл, Страниц: 328
+
+        class Book {
+            constructor(title = "", author = "", pages = 0) {
+                this.title = title;
+                this.author = author;
+                this.pages = pages;
+            }
+            displayInfo() {
+                console.log(`Название: ${this.title}, Автор: ${this.author}, Количество страниц: ${this.pages}`);
+            } 
+        }
+
+        const book1 = new Book("1984", "Джордж Оруэлл", 328);
+        book1.displayInfo();
+        // Вывод: Название: 1984, Автор: Джордж Оруэлл, Страниц: 328
+
+        // Задание2."Управление списком студентов" 
+        // Реализуйте класс Student, представляющий студента, со следующими свойствами и методами: 
+        // ● Свойство name(имя)-строка, имя студента. 
+        // ● Свойство age(возраст)-число, возраст студента. 
+        // ● Свойство grade(класс)-строка, класс, в котором учится студент. 
+        // ● Метод displayInfo()-выводит информацию о студенте (имя, возраст и класс). 
+        // // Пример использования класса 
+        // const student1 = new Student("John Smith", 16, "10th grade"); 
+        // student1.displayInfo(); 
+        // // Вывод: 
+        // // Name: John Smith 
+        // // Age: 16 
+        // // Grade: 10th grade
+        // const student2 = new Student("Jane Doe", 17, "11th grade"); 
+        // student2.displayInfo(); 
+        // // Вывод: 
+        // // Name: Jane Doe 
+        // // Age: 17 
+        // // Grade: 11th grade
+        class Student {
+            constructor(name = "", age = 0, grade = "") {
+                this.name = name;
+                this.age = age;
+                this.grade = grade;
+            };
+            displayInfo() {
+                console.log(`Name: ${this.name}\n\r Age: ${this.age}\n\r Grade: ${this.grade}\n\r`);
+            }
+        }
+
+        const student1 = new Student("John Smith", 16, "10th grade"); 
+        student1.displayInfo(); 
+        // Вывод: 
+        // Name: John Smith 
+        // Age: 16 
+        // Grade: 10th grade
+        const student2 = new Student("Jane Doe", 17, "11th grade"); 
+        student2.displayInfo(); 
+        // Вывод: 
+        // Name: Jane Doe 
+        // Age: 17 
+        // Grade: 11th grade
+    </script>
+</body>
+</html>
