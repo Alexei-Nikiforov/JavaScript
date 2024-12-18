@@ -37,7 +37,7 @@ function renderGroupTraining(groupTraining) {
                 <p>Максимальное кол-во участников: <span>${element.max_number}</span></p>
                 <p data-id=${element.id}>Текущее кол-во участников: <span>${element.current_quantity}</span></p>
                 <a href="#" class="btn btn-outline-secondary" id="${element.id}">Записаться</a>
-                <a href="#" class="btn btn-danger rounded-pill px-3 pe-none">Отменить запись</a>
+                <a href="#" class="btn btn-danger rounded-pill px-3 pe-none" id="${element.id}">Отменить запись</a>
             </div>
         `);
 
@@ -57,11 +57,11 @@ rowEl.addEventListener('click', function (e) {
         const currentQuantityEl = document.querySelector(`[data-id="${e.target.id}"]`);
         const spanEl = currentQuantityEl.querySelector('span');
         spanEl.textContent = +(groupTraining[e.target.id - 1].current_quantity) + 1;
-        spanEl.classList.add('cancel_entries');
+        spanEl.classList.add(`cancel_entries_${e.target.id}`);
 
         const linkEl = document.getElementById(`${e.target.id}`);
         linkEl.classList.add('pe-none');
-        linkEl.classList.add('active_link');
+        linkEl.classList.add(`active_link_${e.target.id}`);
         linkEl.nextElementSibling.classList.remove('pe-none');
 
         e.preventDefault();
@@ -69,13 +69,13 @@ rowEl.addEventListener('click', function (e) {
     }
     if(e.target.classList.contains('btn-danger')) {
 
-        const spanElem = document.querySelector(`.cancel_entries`);
+        const spanElem = document.querySelector(`.cancel_entries_${e.target.id}`);
         spanElem.textContent = +(spanElem.textContent) - 1;
-        spanElem.classList.remove('cancel_entries');
+        spanElem.classList.remove(`cancel_entries_${e.target.id}`);
 
-        const linkElem = document.querySelector('.active_link');
+        const linkElem = document.querySelector(`.active_link_${e.target.id}`);
         linkElem.classList.remove('pe-none');
-        linkElem.classList.remove('active_link');
+        linkElem.classList.remove(`.active_link_${e.target.id}`);
         linkElem.nextElementSibling.classList.add('pe-none');
 
         e.preventDefault();
