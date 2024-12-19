@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.pacifico-regular {
+    font-family: "Pacifico", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container__title {
+    font-family: "Pacifico", serif;
+    font-size: 32px;
+    transition: 2s;
+    margin-bottom: 20px;
+}
+
+.container__box {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.slider__image {
+    display: none;
+}
+
+.arrow {
+    position: absolute;    
+    font-family: "Pacifico", serif;
+    font-size: 26px;
+    border: none;
+    cursor: pointer;
+    padding: 30px;
+    transition: 2s;
+}
+
+.arrow-right {
+    right: -50px;
+    border-radius: 0 70px 70px 0;
+}
+
+.arrow-right:hover {
+    background-color: rgba(160, 240, 20, 0.6);
+}
+
+.arrow-left {
+    left: -50px;
+    border-radius: 70px 0 0 70px;
+}
+
+.arrow-left:hover {
+    background-color: rgba(140, 15, 235, 0.6);
+}
+
+.block {
+    display: block;
+}
+
+.pagination {
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    background-color: rgb(110, 110, 110);
+}
+
+.pagination:hover {
+    background-color: red;
+}
+
+.active {
+    background-color: gold;
+}
+
+#points {
+    display: flex;
+    gap: 50px;
+}
+
+.appearance {
+    animation-name: appearance;
+    animation-duration: 2s;
+}
+
+@keyframes appearance {
+    from {
+        opacity: 0.5
+    }
+
+    to {
+        opacity: 1.5
+    }
+}
