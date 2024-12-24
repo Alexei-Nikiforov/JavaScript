@@ -37,7 +37,7 @@ function renderGroupTraining(groupTraining) {
                 <p>Максимальное кол-во участников: <span>${element.max_number}</span></p>
                 <p data-id=${element.id}>Текущее кол-во участников: <span>${element.current_quantity}</span></p>
                 <a href="#" class="btn btn-outline-secondary" id="${element.id}">Записаться</a>
-                <a href="#" class="btn btn-danger rounded-pill px-3 pe-none" id="${element.id}">Отменить запись</a>
+                <a href="#" class="btn btn-light rounded-pill px-3 pe-none" id="${element.id}">Отменить запись</a>
             </div>
         `);
 
@@ -67,7 +67,7 @@ rowEl.addEventListener('click', function (e) {
         e.preventDefault();
         
     }
-    if(e.target.classList.contains('btn-danger')) {
+    if(e.target.classList.contains('btn-light')) {
 
         const spanElem = document.querySelector(`.cancel_entries_${e.target.id}`);
         spanElem.textContent = +(spanElem.textContent) - 1;

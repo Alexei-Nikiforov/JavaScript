@@ -1,0 +1,4 @@
+.pe-none {
+    opacity: 0;
+    transition: .7s ease;
+}
