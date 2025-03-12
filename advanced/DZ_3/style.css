@@ -1,0 +1,81 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+}
+
+button {
+  border: 1px black solid;
+  border-radius: 50px;
+  padding: 10px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: cornsilk;
+}
+
+.container__btn {
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  gap: 130px;
+}
+.container__content-add {
+  padding: 0 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  background-color: beige;
+}
+
+.product-name, .product-review {
+  font-size: 16px;
+  width: 100%;
+}
+
+.product-review {
+  min-height:64px;
+}
+
+.product-btn {
+  border: 2px black solid;
+  border-radius: 150px;
+  width: 25%;
+  padding: 5px;
+}
+
+.view__product {
+  width: 100%;
+}
+
+.view-product__name {
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 26px;
+  background-color: lavender;
+}
+
+.view-product__review {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background-color: bisque;
+  font-size: 24px;
+  font-style: normal;
+  opacity: 0.6;
+}
+
+.view-product__review-button {
+  font-size: 10px;
+  padding: 3px;
+}
